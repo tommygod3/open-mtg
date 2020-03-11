@@ -1,10 +1,7 @@
 import logging
 import os
 
-import game
-import mcts
-import player
-import deck
+from open_mtg import game, mcts, player, deck
 
 
 def configure_logging():

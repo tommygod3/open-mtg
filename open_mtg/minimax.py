@@ -1,6 +1,6 @@
 import copy
 
-from cards import *
+from open_mtg.cards import *
 
 
 def heuristic_value(player, game):

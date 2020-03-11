@@ -4,8 +4,8 @@ import logging
 import numpy as np
 import itertools
 
-from phases import Phases
-from cards import Card, Sorcery, Creature, Land
+from open_mtg.phases import Phases
+from open_mtg.cards import Card, Sorcery, Creature, Land
 
 
 # from player import Player
@@ -32,6 +32,26 @@ class Game:
         # two counters to help keep track of damage assignment - per attacker - per blocker, respectively
         self.attacker_counter = 0
         self.blocker_counter = 0
+    
+    def get_state(self, player_index):
+        player = self.players[player_index]
+        players_decklist = copy.deepcopy(player.deck)
+        players_decklist.sort()
+        return {
+            "life", player.life,
+            "hand": player.hand,
+            "graveyard": player.graveyard,
+            "deck": players_decklist,
+            "battlefield": self.battlefield,
+            "attackers": self.attackers,
+            "blockers": self.blockers,
+            "empty_stack": self.stack_is_empty,
+            "damage_targets": self.damage_targets,
+            "active_player": self.active_player,
+            "nonactive_player": self.nonactive_player,
+            "priority": self.player_with_priority,
+            "current_phase": current_phase_index
+        }
 
     def update_damage_targets(self):
         self.damage_targets = []

@@ -1,4 +1,4 @@
-import cards
+from open_mtg import cards
 
 
 def get_bear_wars_deck():

@@ -1,7 +1,7 @@
 # Licence is granted to freely use and distribute for any sensible/legal purpose so long as this comment
 # remains in any distributed code.
 import copy
-from game import *
+from open_mtg.game import *
 
 
 class Node:

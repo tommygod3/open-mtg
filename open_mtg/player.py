@@ -4,7 +4,7 @@ import numpy as np
 import logging
 import minimax
 
-from cards import Card, Land, Creature, Sorcery
+from open_mtg.cards import Card, Land, Creature, Sorcery
 
 
 class Player:
