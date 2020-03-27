@@ -2,7 +2,7 @@ import copy
 import random
 import numpy as np
 import logging
-import minimax
+from . import minimax
 
 from open_mtg.cards import Card, Land, Creature, Sorcery
 
