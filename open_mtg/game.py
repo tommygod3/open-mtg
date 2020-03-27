@@ -1,4 +1,5 @@
 import math
+import copy
 import random
 import logging
 import numpy as np
@@ -38,7 +39,7 @@ class Game:
         players_decklist = copy.deepcopy(player.deck)
         players_decklist.sort()
         return {
-            "life", player.life,
+            "life": player.life,
             "hand": player.hand,
             "graveyard": player.graveyard,
             "deck": players_decklist,
@@ -50,7 +51,7 @@ class Game:
             "active_player": self.active_player,
             "nonactive_player": self.nonactive_player,
             "priority": self.player_with_priority,
-            "current_phase": current_phase_index
+            "current_phase": self.current_phase_index
         }
 
     def update_damage_targets(self):
