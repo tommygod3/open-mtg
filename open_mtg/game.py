@@ -37,7 +37,6 @@ class Game:
     def get_state(self, player_index):
         player = self.players[player_index]
         players_decklist = copy.deepcopy(player.deck)
-        players_decklist.sort()
         return {
             "life": player.life,
             "hand": player.hand,
